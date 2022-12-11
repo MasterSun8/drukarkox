@@ -1,21 +1,35 @@
 :root {
-    --fore: rgb(80, 176, 255);
-    --back: #4f4f4f;
-    --text: #fff;
-    --text_active: #000;
+/*
+Light blue: #ADD8E6
+Medium blue: #87CEEB
+Dark blue: #0000FF
+Light gray: #D3D3D3
+Medium gray: #A9A9A9
+Dark gray: #696969
+*/
+    --background: #F8F8FF;
+    --headings: #000;
+    --links: #1E90FF;
+    --text: #202020;
+    --text_active: #010101;
+    --interface: #d9d9d9;
+    --navbar_size: 21vh;
+    --height: 101vh;
+    --elemSize: calc(var(--variable-width) - 6vh);
+    
 }
 
 body{
-    background-color: var(--fore);
+    background-color: var(--background);
 }
 
 .navbar {
     position:absolute;
     top: -1vh;
-    left: -13vw;
-    height: 101vh;
-    width: 20vw;
-    background-color: var(--back);
+    left: -17vh;
+    height: var(--height);
+    width: var(--navbar_size);
+    background-color: var(--interface);
     transition: left 0.5s cubic-bezier(0, 0, 0, 1);
 }
 
@@ -24,23 +38,33 @@ body{
 }
 
 .navElems{
-    width: min-content;
-    height: 101vh;
+    width: var(--elemSize);
+    height: var(--height);
     margin: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .navElem{
+    margin: auto;
+    fill: var(--text);
+    white-space: nowrap;
     width: auto;
     height: auto;
     font-size: 3vw;
+    width: 12vh;
     text-align: center;
     color: var(--text);
 }
 
 .active{
-    background-color: var(--text_active);
-    color: var(--text);
+    color: var(--text_active);
+    fill: var(--text_active);
+}
+
+.content{
+    display: flex;
+    float: right;
+    flex: auto;
 }
