@@ -1,0 +1,46 @@
+:root {
+    --fore: rgb(80, 176, 255);
+    --back: #4f4f4f;
+    --text: #fff;
+    --text_active: #000;
+}
+
+body{
+    background-color: var(--fore);
+}
+
+.navbar {
+    position:absolute;
+    top: -1vh;
+    left: -13vw;
+    height: 101vh;
+    width: 20vw;
+    background-color: var(--back);
+    transition: left 0.5s cubic-bezier(0, 0, 0, 1);
+}
+
+.navbar:hover{
+    left: 0vw;
+}
+
+.navElems{
+    width: min-content;
+    height: 101vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.navElem{
+    width: auto;
+    height: auto;
+    font-size: 3vw;
+    text-align: center;
+    color: var(--text);
+}
+
+.active{
+    background-color: var(--text_active);
+    color: var(--text);
+}
