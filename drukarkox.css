@@ -11,8 +11,8 @@ Dark gray: #696969
     --background: #F8F8FF;
     --headings: #000;
     --links: #1E90FF;
-    --text: #202020;
-    --textActive: #010101;
+    --text: #222;
+    --textActive: #5a2ca0;
     --interface: #d9d9d9;
     --navbar_size: 21vh;
     --height: 101vh;
@@ -75,11 +75,6 @@ body{
     width: 12vh;
     text-align: center;
     color: var(--text);
-    transition: transform 3s linear;
-}
-
-.navElem:hover{
-    transform: rotate(360deg);
 }
 
 .active{
@@ -94,6 +89,7 @@ body{
     justify-content: space-between;
     height: -webkit-fill-available;
     transition: all 0.5s cubic-bezier(0, 0, 0, 1);
+    flex: 1;
 }
 
 #contentsControl {
@@ -106,16 +102,16 @@ body{
 
 .content{
     margin: 2vh;
-    width: 38vh;
-    height: 38vh;
-    min-width: 22vw;
-    min-height: 22vw;
+    min-width: 20vw;
+    min-height: 20vw;
+    max-width: 22vh;
+    max-height: 22vh;
     background-color: var(--interface);
     transition: box-shadow 0.5s cubic-bezier(0, 0, 0, 1);
 }
 
 .content:hover{
-    left: -17vh;
+    box-shadow: 1vh 1vh 1vh var(--interfaceShadow);
 }
 
 .bg{
