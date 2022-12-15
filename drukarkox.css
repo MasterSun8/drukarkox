@@ -123,3 +123,20 @@ body{
     z-index: -1;
     background-color: var(--background);
 }
+
+#searchBar{
+    width: 100%;
+    max-width: 100%;
+    height: 3vh;
+    min-height: auto;
+    background-color: var(--interface);
+    border: none;
+}
+
+#searchBar:focus-visible{
+    outline: none;
+}
+
+a{
+    all: unset;
+}
