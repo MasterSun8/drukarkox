@@ -6,34 +6,53 @@ Dark blue: #0000FF
 Light gray: #D3D3D3
 Medium gray: #A9A9A9
 Dark gray: #696969
+#2c2c32
 */
     --background: #F8F8FF;
     --headings: #000;
     --links: #1E90FF;
     --text: #202020;
-    --text_active: #010101;
+    --textActive: #010101;
     --interface: #d9d9d9;
     --navbar_size: 21vh;
     --height: 101vh;
     --elemSize: calc(var(--variable-width) - 6vh);
-    
+    --interfaceShadow: #bfbfbf;
+    --navbarStart: -17vh;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
 }
 
 body{
-    background-color: var(--background);
+    background-color: var(--background); 
 }
 
 .navbar {
-    position:absolute;
+    z-index: 90;
+    position:fixed;
     top: -1vh;
-    left: -17vh;
+    left: var(--navbarStart);
     height: var(--height);
     width: var(--navbar_size);
     background-color: var(--interface);
     transition: left 0.5s cubic-bezier(0, 0, 0, 1);
 }
 
-.navbar:hover{
+#navbarControl {
+    display: none;
+}
+
+.navbar:hover {
+    left: 0vw;
+}
+
+.navbar:hover ~ .contents {
+    filter: brightness(0.5);
+}
+
+#navbarControl:checked + .navbar {
     left: 0vw;
 }
 
@@ -56,15 +75,55 @@ body{
     width: 12vh;
     text-align: center;
     color: var(--text);
+    transition: transform 3s linear;
+}
+
+.navElem:hover{
+    transform: rotate(360deg);
 }
 
 .active{
-    color: var(--text_active);
-    fill: var(--text_active);
+    color: var(--textActive);
+    fill: var(--textActive);
+}
+
+.contents{
+    display: flex;
+    margin: 0 0 0 3vw;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: -webkit-fill-available;
+    transition: all 0.5s cubic-bezier(0, 0, 0, 1);
+}
+
+#contentsControl {
+    display: none;
+}
+
+#contentsControl:not(:checked) ~ .contents {
+    filter: brightness(0.5);
 }
 
 .content{
-    display: flex;
-    float: right;
-    flex: auto;
+    margin: 2vh;
+    width: 38vh;
+    height: 38vh;
+    min-width: 22vw;
+    min-height: 22vw;
+    background-color: var(--interface);
+    transition: box-shadow 0.5s cubic-bezier(0, 0, 0, 1);
+}
+
+.content:hover{
+    left: -17vh;
+}
+
+.bg{
+    position: fixed;
+    top: -1vh;
+    left: 0vh;
+    height: var(--height);
+    width: 100vw;
+    z-index: -1;
+    background-color: var(--background);
 }
