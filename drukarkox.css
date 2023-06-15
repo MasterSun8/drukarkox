@@ -15,14 +15,18 @@ Dark gray: #696969
     --textActive: #5a2ca0;
     --interface: #d9d9d9;
     --navbar_size: 21vh;
-    --height: 101vh;
-    --elemSize: calc(var(--variable-width) - 6vh);
+    --height: 105vh;
+    --elemSize: calc(var(--navbar_size) - 6vh);
     --interfaceShadow: #bfbfbf;
     --navbarStart: -17vh;
 }
 
 ::-webkit-scrollbar { 
     display: none; 
+}
+
+html, body {
+    height: 100%;
 }
 
 body{
@@ -59,6 +63,7 @@ body{
 .navElems{
     width: var(--elemSize);
     height: var(--height);
+    
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -101,6 +106,7 @@ body{
 }
 
 .content{
+    border-radius: 5px;
     margin: 2vh;
     min-width: 20vw;
     min-height: 20vw;
@@ -116,10 +122,10 @@ body{
 
 .bg{
     position: fixed;
-    top: -1vh;
+    top: -2vh;
     left: 0vh;
-    height: var(--height);
-    width: 100vw;
+    min-height: var(--height);
+    width: 101%;
     z-index: -1;
     background-color: var(--background);
 }
