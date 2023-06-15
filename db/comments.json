@@ -1,0 +1,14 @@
+{
+    "0": {
+        "Post_id": 1,
+        "Content": "Bardzo ciekawy artykuł, dziękuję za tą treść",
+        "Owner_id": 3,
+        "Time": "2023-06-15T16:03:29.411Z"
+    },
+    "1": {
+        "Post_id": 1,
+        "Content": "słabe",
+        "Owner_id": 2,
+        "Time": "2023-06-11T12:45:14.411Z"
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "0": {
+        "Username": "admin",
+        "Mail": "admin@drukarkox.pl",
+        "Password": "admin123",
+        "Printers": 3,
+        "Admin": true
+    },
+    "1": {
+        "Username": "mrrf21",
+        "Mail": "maciek2130@gmail.com",
+        "Password": "maciololo123",
+        "Printers": 2,
+        "Admin": false
+    },
+    "2": {
+        "Username": "unrooted",
+        "Mail": "root@protonmail.com",
+        "Password": "wytyfy09",
+        "Printers": 4,
+        "Admin": false
+    },
+    "3": {
+        "Username": "filkaneko",
+        "Mail": "filaneko@filaneko.pl",
+        "Password": "filaneko210938",
+        "Printers": 5,
+        "Admin": false
+    }
+}
