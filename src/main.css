@@ -1,0 +1,149 @@
+:root {
+/*
+Light blue: #ADD8E6
+Medium blue: #87CEEB
+Dark blue: #0000FF
+Light gray: #D3D3D3
+Medium gray: #A9A9A9
+Dark gray: #696969
+#2c2c32
+*/
+    --background: #F8F8FF;
+    --headings: #000;
+    --links: #1E90FF;
+    --text: #222;
+    --textActive: #5a2ca0;
+    --interface: #d9d9d9;
+    --navbar_size: 21vh;
+    --height: 105vh;
+    --elemSize: calc(var(--navbar_size) - 6vh);
+    --interfaceShadow: #bfbfbf;
+    --navbarStart: -17vh;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+html, body {
+    height: 100%;
+}
+
+body{
+    background-color: var(--background); 
+}
+
+a{
+    all: unset;
+}
+
+.navbar {
+    z-index: 90;
+    position:fixed;
+    top: -1vh;
+    left: var(--navbarStart);
+    height: var(--height);
+    width: var(--navbar_size);
+    background-color: var(--interface);
+    transition: left 0.5s cubic-bezier(0, 0, 0, 1);
+}
+
+#navbarControl {
+    display: none;
+}
+
+.navbar:hover {
+    left: 0vw;
+}
+
+.navbar:hover ~ .contents {
+    filter: brightness(0.5);
+}
+
+#navbarControl:checked + .navbar {
+    left: 0vw;
+}
+
+.navElems{
+    width: var(--elemSize);
+    height: var(--height);
+    
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.navElem{
+    margin: auto;
+    fill: var(--text);
+    white-space: nowrap;
+    width: auto;
+    height: auto;
+    font-size: 3vw;
+    width: 12vh;
+    text-align: center;
+    color: var(--text);
+}
+
+.active{
+    color: var(--textActive);
+    fill: var(--textActive);
+}
+
+
+.bg{
+    position: fixed;
+    top: -2vh;
+    left: 0vh;
+    min-height: var(--height);
+    width: 102%;
+    z-index: -1;
+    background-color: var(--background);
+}
+
+#searchBar{
+    width: 100%;
+    max-width: 100%;
+    height: 3vh;
+    min-height: auto;
+    background-color: var(--interface);
+    border: none;
+}
+
+#searchBar:focus-visible{
+    outline: none;
+}
+
+.contents{
+    display: flex;
+    margin: 0 0 0 3vw;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: -webkit-fill-available;
+    transition: all 0.5s cubic-bezier(0, 0, 0, 1);
+    flex: 1;
+}
+
+#contentsControl {
+    display: none;
+}
+
+#contentsControl:not(:checked) ~ .contents {
+    filter: brightness(0.5);
+}
+
+.content{
+    border-radius: 5px;
+    margin: 2vh;
+    min-width: 20vw;
+    min-height: 20vw;
+    max-width: 22vh;
+    max-height: 22vh;
+    background-color: var(--interface);
+    transition: box-shadow 0.5s cubic-bezier(0, 0, 0, 1);
+}
+
+.content:hover{
+    box-shadow: 1vh 1vh 1vh var(--interfaceShadow);
+}
