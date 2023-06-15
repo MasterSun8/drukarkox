@@ -1,0 +1,67 @@
+{
+    "0": {
+        "company": "Creality",
+        "model": "Ender 3 Pro",
+        "type": "Cartesian FDM"
+    },
+    "1": {
+        "company": "Prusa",
+        "model": "MK3",
+        "type": "Cartesian FDM"
+    },
+    "2": {
+        "company": "Ratrig",
+        "model": "V core 3",
+        "type": "CoreXY FDM"
+    },
+    "3": {
+        "company": "Anycubic",
+        "model": "cobra",
+        "type": "Cartesian FDM"
+    },
+    "4": {
+        "company": "Anycubic",
+        "model": "Photon mono x",
+        "type": "SLA"
+    },
+    "5": {
+        "company": "Artillery",
+        "model": "Hornet",
+        "type": "Cartesian FDM"
+    },
+    "6": {
+        "company": "Bambu lab",
+        "model": "x1 carbon",
+        "type": "CoreXY FDM"
+    },
+    "7": {
+        "company": "Creality",
+        "model": "Ender 5 Pro",
+        "type": "CoreXY FDM"
+    },
+    "8": {
+        "company": "Creality",
+        "model": "Halot one",
+        "type": "SLA"
+    },
+    "9": {
+        "company": "Elegoo",
+        "model": "Mars 3 Pro",
+        "type": "SLA"
+    },
+    "10": {
+        "company": "flsun",
+        "model": "v400",
+        "type": "Delta FDM"
+    },
+    "11": {
+        "company": "Prusa",
+        "model": "Mini",
+        "type": "Cartesian FDM"
+    },
+    "12": {
+        "company": "Prusa",
+        "model": "XL",
+        "type": "CoreXY FDM"
+    }
+}
