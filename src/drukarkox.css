@@ -1,0 +1,14 @@
+.contents{
+    justify-content: center;
+    align-content: flex-start;
+}
+
+.content{
+    padding: 3vh;
+    min-height: 10vh;
+    min-width: 80vw;
+}
+
+.time{
+    text-align: end;
+}

@@ -120,6 +120,7 @@ input[type=text]:focus-visible{
     margin: 0 0 0 3vw;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-content: flex-start;
     height: -webkit-fill-available;
     transition: all 0.5s cubic-bezier(0, 0, 0, 1);
     flex: 1;
@@ -135,11 +136,10 @@ input[type=text]:focus-visible{
 
 .content{
     border-radius: 5px;
-    margin: 2vh;
+    margin: 1vh;
     min-width: 20vw;
     min-height: 20vw;
     max-width: 22vh;
-    max-height: 22vh;
     background-color: var(--interface);
     transition: box-shadow 0.5s cubic-bezier(0, 0, 0, 1);
 }

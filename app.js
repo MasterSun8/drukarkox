@@ -74,9 +74,9 @@ const server = http.createServer((req, res) => {
         res.write(getSite('public/' + 'settings.html'))
     } else if (public.includes(site[0])) {
         url = url.split('.')[0]
-        res.write('<html><head><link rel="stylesheet" href="main.css"><link rel="stylesheet" href="' + url + '.css"><script src="' + url + '.js"></script></head>')
+        res.write('<html><head><link rel="stylesheet" href="main.css"><link rel="stylesheet" href="' + url + '.css"></head>')
         res.write(getSite('public/template.html'))
-        res.write('<script src="main.js"></script></body></html>')
+        res.write('<script src="' + url + '.js"></script><script src="main.js"></script></body></html>')
     } else {
         res.write(getSite('public/default.html'))
     }

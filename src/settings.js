@@ -34,6 +34,5 @@ function login(){
                 return true
             }
         }
-        
     })
 }
