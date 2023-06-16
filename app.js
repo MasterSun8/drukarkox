@@ -14,13 +14,14 @@ function getSite(site) {
     return file
 }
 
-function saveNew(file, data) {
-    file = 'db/' + file + '.json'
+function saveNew(base, data) {
+    let file = 'db/' + base + '.json'
     let json = fs.readFileSync(file, { encoding: 'utf8', flag: 'r' })
     json = JSON.parse(json)
-    if (file == 'users') {
+    if (base == 'users') {
         for (let i in json) {
             if (json[i]['Mail'] == data['Mail']) {
+                console.log(json[i]['Mail'])
                 return 'false'
             }
         }
@@ -28,8 +29,8 @@ function saveNew(file, data) {
     let len = Object.keys(json).length
     console.log(len)
     json[parseInt(len)] = data
+    //console.log(json)
     json = JSON.stringify(json)
-    console.log(json)
     fs.writeFileSync(file, json, { encoding: 'utf8', flag: 'w' })
     return 'true'
 }
