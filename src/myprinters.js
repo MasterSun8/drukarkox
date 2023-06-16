@@ -32,8 +32,14 @@ function update(){
     .then(text => {
         text = JSON.parse(text)
         len = Object.keys(text).length
-        let found = false
-        for(let i in text){
+        let op = document.createElement('div')
+        op.classList.add('contentWrap')
+        let ht = '<div class="content">'
+        ht += "<h1>Dodaj drukarke</h1>"
+        ht += '<select name="drukarka" id="print">'
+        let i
+        for(i in text){
+            ht += '<option value="'+i+'">'+i+'</option>'
             console.log(i)
             if(!o.includes(i)){
                 continue
@@ -53,6 +59,9 @@ function update(){
             t.innerHTML += html
             posts.appendChild(t)
         }
+        ht += '</select></div>'
+        op.innerHTML += ht
+        posts.appendChild(op)
     })
 }
 
