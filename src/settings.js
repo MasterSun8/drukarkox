@@ -8,6 +8,15 @@ function register(){
     }
     let mail = document.getElementById('mail').value
     fetch("add/users?Username="+name+"&Mail="+mail+"&Password="+pass+"&Printers=0&admin=false")
+    .then(v => v.text())
+    .then(text => {
+        console.log(text)
+        if(text=='true'){
+            alert("Account created")
+        }else{
+            alert("This mail is already in use")
+        }
+    })
 }
 
 function login(){
