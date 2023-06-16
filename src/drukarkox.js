@@ -43,17 +43,9 @@ function update(){
             t.classList.add('contentWrap')
             let html = '<div class="content">'
             html += "<h1>"+text[i]['Title']+"</h1>"
-            html += '<div class="time">' + users[text[i]['Owner_id']]['Username'] + "</div>"
+            html += '<div class="time">' + user + "</div>"
             html += text[i]['Content']+"<br>"
             html += '<div class="time">' + text[i]['Time'] + "</div>"
-
-            /*
-            <div class="contentWrap">
-
-            <div class="contentWrap">
-                <div class="content"></div>
-            </div>
-            */
             html += '</div>'
             t.innerHTML += html
             posts.appendChild(t)
