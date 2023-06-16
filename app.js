@@ -2,7 +2,7 @@ const http = require('http')
 const fs = require('fs')
 
 const src = fs.readdirSync('src')
-const img = fs.readdirSync('img')
+//const img = fs.readdirSync('img')
 
 const db = ['comments', 'posts', 'printers', 'projects', 'users']
 const public = ['drukarkox', 'leaderboard', 'graph', 'myprinters', 'settings']
@@ -65,9 +65,9 @@ const server = http.createServer((req, res) => {
 
     } else if (src.includes(url)) {
         res.write(getSite('src/' + url))
-    } else if (img.includes(url)) {
+    }/* else if (img.includes(url)) {
         res.write(getSite('img/' + url))
-    } else if (db.includes(d[1]) && d[0] == 'db') {
+    }*/ else if (db.includes(d[1]) && d[0] == 'db') {
         res.setHeader('Content-Type', 'application/json')
         res.write(getSite('db/' + d[1] + '.json'))
     } else if (site[0] == 'settings') {

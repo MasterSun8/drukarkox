@@ -6,6 +6,20 @@ o = o.split('=')[1]
 o = o.split(',')
 o = [...o]
 console.log(o)
+
+function tf(){
+    let k = document.getElementById('print').value
+    if(k){
+        o.push(k)
+        document.cookie = "printers="+o.toString()
+    }
+    o = document.cookie.split(';')[1]
+    o = o.split('=')[1]
+    o = o.split(',')
+    o = [...o]
+    console.log(o)
+
+}
             
 var lastClickedTime
 
@@ -36,14 +50,13 @@ function update(){
         op.classList.add('contentWrap')
         let ht = '<div class="content">'
         ht += "<h1>Dodaj drukarke</h1>"
-        ht += '<select name="drukarka" id="print">'
+        ht += '<select id="print">'
         let i
         for(i in text){
-            ht += '<option value="'+i+'">'+i+'</option>'
-            console.log(i)
             if(!o.includes(i)){
+                ht += '<option value="'+i+'">'+i+'</option>'
                 continue
-            }
+            }else{}
 
             if(!(text[i]['company'].includes(search.value)) && !(text[i]['model'].includes(search.value)) && !(text[i]['type'].includes(search.value))){
                 continue
@@ -59,7 +72,7 @@ function update(){
             t.innerHTML += html
             posts.appendChild(t)
         }
-        ht += '</select></div>'
+        ht += '</select><button id="tf" onclick="tf()">buttonz</button></div>'
         op.innerHTML += ht
         posts.appendChild(op)
     })
