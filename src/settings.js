@@ -20,5 +20,20 @@ function register(){
 }
 
 function login(){
+    let pass = document.getElementById('passwordLog').value
+    let mail = document.getElementById('nameLog').value
 
+    fetch("db/users")
+    .then(v => v.text())
+    .then(text => {
+        text = JSON.parse(text)
+        for(let i in text){
+            console.log(text[i]['Mail'])
+            if (text[i]['Mail'] == mail && text[i]['Password'] == pass){
+                document.getElementById('contents').innerHTML = '<div class="bg"></div>'
+                return true
+            }
+        }
+        
+    })
 }

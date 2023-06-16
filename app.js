@@ -7,7 +7,7 @@ const img = fs.readdirSync('img')
 const db = ['comments', 'posts', 'printers', 'projects', 'users']
 const public = ['drukarkox', 'leaderboard', 'graph', 'myprinters', 'settings']
 
-console.log(public)
+console.log(db)
 
 function getSite(site) {
     let file = fs.readFileSync(site, { encoding: 'utf8', flag: 'r' })
@@ -21,15 +21,12 @@ function saveNew(base, data) {
     if (base == 'users') {
         for (let i in json) {
             if (json[i]['Mail'] == data['Mail']) {
-                console.log(json[i]['Mail'])
                 return 'false'
             }
         }
     }
     let len = Object.keys(json).length
-    console.log(len)
     json[parseInt(len)] = data
-    //console.log(json)
     json = JSON.stringify(json)
     fs.writeFileSync(file, json, { encoding: 'utf8', flag: 'w' })
     return 'true'
@@ -49,6 +46,8 @@ const server = http.createServer((req, res) => {
 
     let d = url.split('/')
     let site = url.split('.')
+
+    console.log(url)
 
     if (d[0] == 'add' && db.includes(d[1].split('?')[0])) {
 
@@ -70,7 +69,7 @@ const server = http.createServer((req, res) => {
         res.write(getSite('img/' + url))
     } else if (db.includes(d[1]) && d[0] == 'db') {
         res.setHeader('Content-Type', 'application/json')
-        res.write(getSite('db/' + d[1]))
+        res.write(getSite('db/' + d[1] + '.json'))
     } else if (site[0] == 'settings') {
         res.write(getSite('public/' + 'settings.html'))
     } else if (public.includes(site[0])) {
