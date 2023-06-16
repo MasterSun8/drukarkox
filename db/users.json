@@ -10,7 +10,7 @@
         "Username": "mrf694202137",
         "Mail": "maciek2137@gmail.com",
         "Password": "maciololo2137",
-        "Printers": 2,
+        "Printers": [2, 3, 4, 1],
         "Admin": false
     },
     "2": {

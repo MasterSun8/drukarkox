@@ -31,6 +31,8 @@ function login(){
             console.log(text[i]['Mail'])
             if (text[i]['Mail'] == mail && text[i]['Password'] == pass){
                 document.getElementById('contents').innerHTML = '<div class="bg"></div>'
+                document.cookie = "user="+text[i]['Username'];
+                document.cookie = "printers="+text[i]['Printers'];
                 return true
             }
         }
